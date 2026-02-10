@@ -106,8 +106,8 @@ void bubbleSort(){
                     list[j+1]=temp;
                 }
             }
-            printf("Element sorted!!!!\n");
         }
+           printf("Element sorted!!!!\n");
     }
 }
 int main(){
