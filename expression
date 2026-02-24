@@ -1,0 +1,78 @@
+#include<Stdio.h>
+#include<math.h>
+#include<stype.h>
+#include<string.h>
+int operand[100];
+char operator[100];
+int top1=-1,top2=-1;
+
+void doProcess(){
+    int x=operand[top1--];
+    int y=operand[top2--];
+    char op=operator[top2--];
+    int z;
+    switch(op{
+        case'+':
+        break;
+        case'-':
+        z=y-x;
+        break;
+        case'*':
+        z=y*x;
+        break;
+        case'/':
+        z=y/x;
+        break;
+        case'^':
+        z=(int)pow(y,x);
+        break;
+    }
+    operand[++top]=z;
+}
+
+int precedence(char op){
+    switch(op){
+        case'+':
+         case'-':
+         return 1;
+          case'*':
+           case'/':
+           return 2;
+            case'^':
+            return 3;
+            default:
+            return 0;
+    }
+}
+
+int evalInfixExpresion(char *exp){
+    for(int i=0;i<strlen(exp);i++){
+        char ch =exp[i];
+        if(isdigit(ch)){  
+        }
+        else if(ch=='+' || ch=='-' || ch=='*' || ch=='^'){ 
+        }
+        else if(char=='('){
+            operator[++top2]=ch;
+        }
+        else if(ch==')'){
+            while(operator[top]!='()'){
+                doProcess();
+            }
+            top2--;
+        }
+    }
+    while(top!=-1){
+        doProcess():
+    }
+    return operand[top1--];
+}
+int main(){
+    char expression[100];
+    printf("Enter Expression:");
+    gets(expr);
+    int result = evalInfixExpression(expr);
+    printf(Result of expression %s=%d\n",exp,result);
+        return 0;
+}
+
